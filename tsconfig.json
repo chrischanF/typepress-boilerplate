@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "ES2023",
+    "allowJs": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "resolveJsonModule": true,
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@middleware/*": ["src/app/middlewares/*"],
+      "@service/*": ["src/app/services/*"],
+      "@routers/*": ["src/app/routes/*"],
+    },
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

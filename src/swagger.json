@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Express TypeScript API",
+    "version": "1.0.0",
+    "description": "A simple Express API with TypeScript and Swagger documentation"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Root endpoint",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "summary": "Admin endpoint",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ApiKeyHeader"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "example": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "ApiKeyHeader": {
+        "in": "header",
+        "name": "auth-token",
+        "required": true,
+        "example": "dev",
+        "schema": {
+          "type": "string"
+        },
+        "description": "API key for authorization"
+      }
+    }
+  },
+  "security": [
+    {
+      "ApiKeyAuth": ["dev"]
+    }
+  ]
+}
